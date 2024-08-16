@@ -354,7 +354,7 @@ The first loader is a "package" loader. This is used when registering a package.
 ```python
 from masonite.facades import View
 
-View.add('module_name/directory')
+View.add_location('module_name/directory')
 ```
 
 The other loader is a `FileSystem` loader. This should be used when the directory path is NOT a module but rather just a file system path:
@@ -363,7 +363,7 @@ The other loader is a `FileSystem` loader. This should be used when the director
 from jinja2.loaders import FileSystemLoader
 from masonite.facades import View
 
-View.add(
+View.add_location(
     os.path.join(
         os.getcwd(), 'package_views'
     )
